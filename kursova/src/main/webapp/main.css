@@ -1,0 +1,77 @@
+@charset "ISO-8859-1";
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#navList {
+	list-style-type: none;
+ 	margin: 0;
+	padding: 0;
+	background-color: #005b2e;
+}
+.navItem {
+	display: inline;
+	border:1px;
+}
+.navLink {
+	color: black;
+	text-decoration: none;
+	background-color: #787878;
+	color: white;
+	padding: 14px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+.navLink:hover, .navLink:active {
+  background-color: red;
+}
+#footerList {
+	list-style-type: none;
+ 	margin: 0;
+	padding: 0;
+}
+header {
+	background-color: lightgray;
+}
+#main	{
+	background-color: lightgray;
+}
+#signupContainer {
+	padding: 30px;
+}
+.signupInputs {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+#signupButton:hover {
+  background-color: #005b2e;
+}
+#vertList {
+	list-style-type: none;
+ 	margin: 0;
+	padding: 0;
+}
+footer {
+	position:absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: darkorange;
+}
+.footItem {
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.footLink {
+	color: black;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
