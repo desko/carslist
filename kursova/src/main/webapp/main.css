@@ -2,9 +2,22 @@
 body {
    margin:0;
    padding:0;
-   height:100%;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
 }
-#navList {
+.pageContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.env {
+	padding-bottom:30px;
+}
+.navList {
 	list-style-type: none;
  	margin: 0;
 	padding: 0;
@@ -27,7 +40,7 @@ body {
 .navLink:hover, .navLink:active {
   background-color: red;
 }
-#footerList {
+.footerList {
 	list-style-type: none;
  	margin: 0;
 	padding: 0;
@@ -35,11 +48,15 @@ body {
 header {
 	background-color: lightgray;
 }
-#main	{
+.main	{
 	background-color: lightgray;
+	flex-grow: 1;
 }
-#signupContainer {
-	padding: 30px;
+header, .main, footer, .env {
+    flex-shrink: 0;
+}
+.signupContainer {
+	padding: 20px;
 }
 .signupInputs {
 	width: 50%;
@@ -47,20 +64,20 @@ header {
 	margin: 8px 0;
 	box-sizing: border-box;
 }
-#signupButton:hover {
+.signupButton:hover {
   background-color: #005b2e;
 }
-#vertList {
+.vertList {
 	list-style-type: none;
  	margin: 0;
 	padding: 0;
 }
-footer {
-	position:absolute;
-	bottom: 0;
+<!--footer {
 	width: 100%;
 	background-color: darkorange;
-}
+	height: 30px;
+	margin-top: auto
+}-->
 .footItem {
 	display: inline;
 	margin-left: 10px;
