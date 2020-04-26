@@ -55,9 +55,10 @@ header {
 header, .main, footer, .env {
     flex-shrink: 0;
 }
-.signupContainer {
+.signupContainer, .loginContainer {
 	padding: 20px;
 }
+
 .signupInputs {
 	width: 50%;
 	padding: 12px 20px;
