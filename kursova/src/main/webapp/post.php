@@ -15,24 +15,38 @@
 					<li class="navItem"><a class="navLink" href="index.html">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.html">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.html">New</a></li>
-					<li class="navItem"><a class="navLink" href="makelisting.html">Make Listing</a></li>
+					<li class="navItem"><a class="navLink" href="post.html">Post</a></li>
 					<li class="navItem"><a class="navLink" href="login.html">Log in</a></li>
 					<li class="navItem"><a class="navLink" href="signup.html">Sign up</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div class="main">
-			<div class="loginContainer">
-			<h2>Log in:</h2>
+			<div class="postContainer">
 				<form>
 					<ul class="vertList">
-						<li><input type="text" id="email" placeholder="email" class="loginInputs"></li>
-						<li><input type="password" id="password" placeholder="password" class="loginInputs"></li>
-						<li><a href=""><input type="submit" id="loginButton" value="Log In" class="loginInputs"></a></li>
+						<li class="postItem">
+							<select name="cars" id="car" class="postInput" onchange="changeModels(this.value)">
+							    <option value="">all</option>
+								<option value="Audi">Audi</option>
+								<option value="BMW">BMW</option>
+								<option value="Mercedes-Benz">Mercedes-Benz</option>
+								<option value="Opel">Opel</option>
+								<option value="Seat">Seat</option>
+								<option value="Skoda">Skoda</option>
+								<option value="VW">VW</option>
+							</select>
+						</li>
+						<li class="postItem">
+							<select name="models" id="model" class="postInput">
+							</select>
+						</li>
+						<li class="postItem"><input type="text" id="maxPrice" class="postInput" placeholder="price"></li>
+						<li class="postItem"><textarea class="postInput postText" placeholder="Please describe your post..." maxlength="1000"></textarea></li>
+						<li class="postItem"><input type="file" id="img" name="img" accept="image/*" class="postImage"> <input type="submit"></li>
 					</ul>
 				</form>
 			</div>
-		
 		</div>
 	</div>
 	<footer>
@@ -46,5 +60,6 @@
 		</div>
 	</footer>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

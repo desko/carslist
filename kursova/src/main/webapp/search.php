@@ -15,14 +15,37 @@
 					<li class="navItem"><a class="navLink" href="index.html">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.html">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.html">New</a></li>
-					<li class="navItem"><a class="navLink" href="makelisting.html">Make Listing</a></li>
+					<li class="navItem"><a class="navLink" href="post.html">Post</a></li>
 					<li class="navItem"><a class="navLink" href="login.html">Log in</a></li>
 					<li class="navItem"><a class="navLink" href="signup.html">Sign up</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div class="main">
-			aa<br>
+			<div class="searchContainer">
+				<form>
+					<ul class="vertList">
+						<li class="searchItem">
+							<select name="cars" id="car" class="searchInput" onchange="changeModels(this.value)">
+							    <option value="">all</option>
+								<option value="Audi">Audi</option>
+								<option value="BMW">BMW</option>
+								<option value="Mercedes-Benz">Mercedes-Benz</option>
+								<option value="Opel">Opel</option>
+								<option value="Seat">Seat</option>
+								<option value="Skoda">Skoda</option>
+								<option value="VW">VW</option>
+							</select>
+						</li>
+						<li class="searchItem">
+							<select name="models" id="model" class="searchInput">
+							</select>
+						</li>
+						<li class="searchItem"><input type="text" id="maxPrice" class="searchInput" placeholder="max price"></li>
+						<li><input type="button" class="searchInput" id="searchButton" value="Search"></li>
+					</ul>
+				</form>
+			</div>
 		</div>
 	</div>
 	<footer>
@@ -36,5 +59,6 @@
 		</div>
 	</footer>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

@@ -60,11 +60,11 @@ header {
 header, .main, footer, .env {
     flex-shrink: 0;
 }
-.signupContainer, .loginContainer, .searchContainer {
+.signupContainer, .loginContainer, .searchContainer, .postContainer {
 	padding: 20px;
 }
 
-.signupInputs, .loginInputs, .searchInput {
+.signupInputs, .loginInputs, .searchInput, .postInput {
 	width: 50%;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -77,6 +77,12 @@ header, .main, footer, .env {
 	list-style-type: none;
  	margin: 0;
 	padding: 0;
+}
+.postText {
+	height: 200px;
+}
+.postImage {
+	
 }
 <!--footer {
 	width: 100%;

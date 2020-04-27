@@ -15,33 +15,22 @@
 					<li class="navItem"><a class="navLink" href="index.html">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.html">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.html">New</a></li>
-					<li class="navItem"><a class="navLink" href="makelisting.html">Make Listing</a></li>
+					<li class="navItem"><a class="navLink" href="post.html">Post</a></li>
 					<li class="navItem"><a class="navLink" href="login.html">Log in</a></li>
 					<li class="navItem"><a class="navLink" href="signup.html">Sign up</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div class="main">
-			<div class="searchContainer">
+			<div class="signupContainer">
+				<h2>Please fill out the form to sign up!</h2>
 				<form>
 					<ul class="vertList">
-						<li class="searchItem">
-							<select name="cars" id="car" class="searchInput" onchange="changeModels(this.value)">
-							    <option value="">all</option>
-								<option value="Audi">Audi</option>
-								<option value="BMW">BMW</option>
-								<option value="Mercedes-Benz">Mercedes-Benz</option>
-								<option value="Opel">Opel</option>
-								<option value="Seat">Seat</option>
-								<option value="Skoda">Skoda</option>
-								<option value="VW">VW</option>
-							</select>
-						</li>
-						<li class="searchItem">
-							<select name="models" id="model" class="searchInput">
-							</select>
-						</li>
-						<li class="searchItem"><input type="text" id="maxPrice" class="searchInput" placeholder="max price"></li>
+						<li><input type="text" id="uname" placeholder="user name" class="signupInputs"></li>
+						<li><input type="text" id="email" placeholder="email" class="signupInputs"></li>
+						<li><input type="password" id="password" placeholder="password" class="signupInputs"></li>
+						<li><input type="password" id="confPassword" placeholder="confirm password" class="signupInputs"></li>
+						<li><a href=""><input type="submit" id="signupButton" value="Sign Up" class="signupInputs"></a></li>
 					</ul>
 				</form>
 			</div>
@@ -58,6 +47,5 @@
 		</div>
 	</footer>
 </div>
-<script src="script.js"></script>
 </body>
 </html>

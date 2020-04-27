@@ -15,7 +15,7 @@
 					<li class="navItem"><a class="navLink" href="index.html">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.html">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.html">New</a></li>
-					<li class="navItem"><a class="navLink" href="makelisting.html">Make Listing</a></li>
+					<li class="navItem"><a class="navLink" href="post.html">Post</a></li>
 					<li class="navItem"><a class="navLink" href="login.html">Log in</a></li>
 					<li class="navItem"><a class="navLink" href="signup.html">Sign up</a></li>
 				</ul>
