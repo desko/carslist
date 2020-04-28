@@ -12,12 +12,12 @@
 			<h1>Cars List</h1>
 			<nav class="navBar">
 				<ul class="navList">
-					<li class="navItem"><a class="navLink" href="index.html">Home</a></li>
-					<li class="navItem"><a class="navLink" href="search.html">Search</a></li>
-					<li class="navItem"><a class="navLink" href="newlisted.html">New</a></li>
-					<li class="navItem"><a class="navLink" href="post.html">Post</a></li>
-					<li class="navItem"><a class="navLink" href="login.html">Log in</a></li>
-					<li class="navItem"><a class="navLink" href="signup.html">Sign up</a></li>
+					<li class="navItem"><a class="navLink" href="index.php">Home</a></li>
+					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
+					<li class="navItem"><a class="navLink" href="newlisted.php">New</a></li>
+					<li class="navItem"><a class="navLink" href="post.php">Post</a></li>
+					<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
+					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -52,10 +52,10 @@
 	<footer>
 		<div>
 			<ul class="footerList">
-				<li class="footItem"><a class="footLink" href="contact.html">Contact us</a></li>
-				<li class="footItem"><a class="footLink" href="info.html">Information</a></li>
-				<li class="footItem"><a class="footLink" href="login.html">Log in</a></li>
-				<li class="footItem"><a class="footLink" href="signup.html">Sign up</a></li>
+				<li class="footItem"><a class="footLink" href="contact.php">Contact us</a></li>
+				<li class="footItem"><a class="footLink" href="info.php">Information</a></li>
+				<li class="footItem"><a class="footLink" href="login.php">Log in</a></li>
+				<li class="footItem"><a class="footLink" href="signup.php">Sign up</a></li>
 			</ul>
 		</div>
 	</footer>
