@@ -17,8 +17,10 @@
 					<li class="navItem"><a class="navLink" href="index.php">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.php">New</a></li>
-					<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
-					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li>
+					<li class="navItem"><a class="navLink" href="post.php">Post</a></li>
+					<?php include('logincheck.php')?>
+					<!--<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
+					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li> -->
 				</ul>
 			</nav>
 		</header>
