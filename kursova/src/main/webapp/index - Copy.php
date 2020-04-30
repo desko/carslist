@@ -1,6 +1,4 @@
 <!doctype html>
-<?php include('register.php') ?>
-<?php include('errors.php') ?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -18,27 +16,13 @@
 					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.php">New</a></li>
 					<li class="navItem"><a class="navLink" href="post.php">Post</a></li>
-					<?php include('logincheck.php')?>
-<<<<<<< HEAD
-=======
-					<!--<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
-					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li> -->
->>>>>>> branch 'master' of https://github.com/desko/carslist.git
+					<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
+					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div class="main">
-			<div class="loginContainer">
-			<h2>Log in:</h2>
-				<form method="post" action="login.php">
-					<ul class="vertList">
-						<li><input type="text" id="username" name="username" placeholder="username" class="signupInputs"></li>
-						<li><input type="password" id="password" name="password" placeholder="password" class="signupInputs"></li>
-						<li><a href=""><input type="submit" id="loginButton" name="loginButton" value="Log In" class="signupInputs"></a></li>
-					</ul>
-				</form>
-			</div>
-		
+			aa<br>
 		</div>
 	</div>
 	<footer>

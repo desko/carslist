@@ -4,7 +4,10 @@
 // Always start this first
 session_start();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/desko/carslist.git
 if ( isset( $_SESSION['username'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
@@ -41,7 +44,11 @@ if ( isset( $_SESSION['username'] ) ) {
 				<form enctype="multipart/form-data" action="upload.php" method="post">
 					<ul class="vertList">
 						<li class="postItem">
+<<<<<<< HEAD
 							<select name="cars" id="car" class="postInput" name="car" onchange="changePostModels(this.value)">
+=======
+							<select name="cars" id="car" class="postInput" onchange="changeModelsPost(this.value)">
+>>>>>>> branch 'master' of https://github.com/desko/carslist.git
 								<option value="Audi">Audi</option>
 								<option value="BMW">BMW</option>
 								<option value="Mercedes-Benz">Mercedes-Benz</option>
@@ -55,11 +62,18 @@ if ( isset( $_SESSION['username'] ) ) {
 							<select name="models" id="model"  class="postInput">
 							</select>
 						</li>
+<<<<<<< HEAD
 						<li class="postItem"><input type="text" id="price" name="price" class="postInput" placeholder="price"></li>
 						<li class="postItem"><textarea name="descriptionText" class="postInput postText" id="descriptionText" type="text"  placeholder="Please describe your post..." maxlength="1000"></textarea></li>
 						<?php ?>
                         <li class="postItem"><input type="file" id="img" name="img" accept="image/*" class="postImage"></li>
                         <li class="postItem"><input type="submit" name="postButton" id="postButton" class="postInput" value="Post"></li>
+=======
+						<li class="postItem"><input type="text" id="maxPrice" class="postInput" placeholder="price"></li>
+						<li class="postItem"><textarea class="postInput postText" placeholder="Please describe your post..." maxlength="1000"></textarea></li>
+						<li class="postItem"><input type="file" id="img" name="img" accept="image/*" class="postImage"> <input type="submit" value="submit picture"></li>
+						<li class="postItem"><input type="button" class="postInput" value="Post"></li>
+>>>>>>> branch 'master' of https://github.com/desko/carslist.git
 					</ul>
 				</form>
 			</div>
