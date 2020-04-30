@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="/main.css">
 	<title>Cars List</title>
 </head>
 <body>
@@ -16,8 +16,9 @@
 					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
 					<li class="navItem"><a class="navLink" href="newlisted.php">New</a></li>
 					<li class="navItem"><a class="navLink" href="post.php">Post</a></li>
-					<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
-					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li>
+					<?php include('logincheck.php')?>
+					<!--<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
+					<li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li> -->
 				</ul>
 			</nav>
 		</header>
