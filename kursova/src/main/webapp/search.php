@@ -24,10 +24,10 @@
 		</header>
 		<div class="main">
 			<div class="searchContainer">
-				<form>
+				<form method="post" action="searchresult.php">
 					<ul class="vertList">
 						<li class="searchItem">
-							<select name="cars" id="car" class="searchInput" onchange="changeModels(this.value)">
+							<select name="car" id="car" class="searchInput" onchange="changeModels(this.value)">
 							    <option value="">all</option>
 								<option value="Audi">Audi</option>
 								<option value="BMW">BMW</option>
@@ -39,11 +39,11 @@
 							</select>
 						</li>
 						<li class="searchItem">
-							<select name="models" id="model" class="searchInput">
+							<select name="model" id="model" class="searchInput">
 							</select>
 						</li>
-						<li class="searchItem"><input type="text" id="maxPrice" class="searchInput" placeholder="max price"></li>
-						<li><input type="button" class="searchInput" id="searchButton" value="Search"></li>
+						<li class="searchItem"><input type="text" name="maxPrice" id="maxPrice" class="searchInput" placeholder="max price"></li>
+						<li><input type="submit" name="searchButton" class="searchInput" id="searchButton" value="Search"></li>
 					</ul>
 				</form>
 			</div>

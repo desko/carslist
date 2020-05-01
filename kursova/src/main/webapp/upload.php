@@ -61,10 +61,7 @@ if ($uploadOk == 0) {
         
 
         echo "The file ". basename( $_FILES["img"]["name"]). " has been uploaded.";
-        
-
-        
-        
+        header("Location: /index.php");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
