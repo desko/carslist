@@ -36,7 +36,16 @@ $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
 						if($make==NULL)
 						{
 							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
-        			    	$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+							if($maxprice=="")
+							{
+
+								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings";
+							}
+							else
+							{
+								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+							}
+
         			    	
 						}
 						else
@@ -45,10 +54,27 @@ $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
 							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
 							if($model==	"all")
 							{
-								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND price<='$maxprice'";
+								if($maxprice=="")
+								{
+	
+									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make'";
+								}
+								else
+								{
+									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND price<='$maxprice'";
+								}
 							}
 							else
 							{
+								if($maxprice=="")
+								{
+	
+									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings";
+								}
+								else
+								{
+									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+								}
 								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
 							}
 						}
