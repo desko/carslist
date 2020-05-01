@@ -30,19 +30,35 @@ $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
 		<div class="main">
 			<div class="resultContainer">
     			<?php
-        			if (isset($_POST['searchButton'])) {
-        			    $make = mysqli_real_escape_string($db, $_POST['car']);
-        			    $model = mysqli_real_escape_string($db, $_POST['model']);
-        			    $maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
-        			    $query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
-        			    $result = mysqli_query($db, $query);
+					if (isset($_POST['searchButton'])) 
+					{
+						$make = mysqli_real_escape_string($db, $_POST['car']);
+						if($make==NULL)
+						{
+							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
+        			    	$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+        			    	
+						}
+						else
+						{
+							$model = mysqli_real_escape_string($db, $_POST['model']);
+							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
+							if($model==	"all")
+							{
+								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND price<='$maxprice'";
+							}
+							else
+							{
+								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
+							}
+						}
+						$result = mysqli_query($db, $query);
         			    $row = array();
-        			    /*while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        			     echo "{$row["manufacturer"]}<br>";
-        			     }*/
+
         			    $dir="dirpicture1";
         			    $imgdirstart="<img class=\"searchImage\" src=\"/uploads/";
-        			    if (mysqli_num_rows($result) > 0) {
+						if (mysqli_num_rows($result) > 0) 
+						{
         			        while($row = mysqli_fetch_assoc($result)) {
         			            echo "<div class=\"eachResultContainer\">";
         			            echo $row["manufacturer"]." ".$row["model"]."<br>".$row["price"]. "<br>";
@@ -50,10 +66,12 @@ $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
         			            echo "</div>";
         			        }
         			    }
-        			    else {
+						else 
+						{
         			        echo "0 results";
-        			    }
-        			}
+						}
+					}
+        			
     			?>
 			</div>
 		</div>
