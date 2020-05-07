@@ -23,7 +23,29 @@
 			</nav>
 		</header>
 		<div class="main">
-			aa<br>
+			<div class="newPostContainer">
+        		<?php
+                    $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
+        			$query="SELECT manufacturer, model, price, dirpicture1 FROM listings ORDER BY idlisting DESC LIMIT 10";
+        			$result = mysqli_query($db, $query);
+        			$row = array();
+        			$dir="dirpicture1";
+        			$imgdirstart="<img class=\"searchImage\" src=\"/uploads/";
+        			if (mysqli_num_rows($result) > 0)
+        			{
+        			    while($row = mysqli_fetch_assoc($result)) {
+        			        echo "<div class=\"eachResultContainer\">";
+        			        echo $row["manufacturer"]." ".$row["model"]."<br>".$row["price"]. "<br>";
+        			        echo $imgdirstart.$row[$dir]."\">";
+        			        echo "</div>";
+        			    }
+        			}
+        			else
+        			{
+        			    echo "0 results";
+        			}
+        		?>
+        	</div>
 		</div>
 	</div>
 	<footer>
