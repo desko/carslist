@@ -1,5 +1,5 @@
 <?php 
-if(!isset($_SESSION)) 
+if(!isset($_SESSION)) //checks if user is logged and displays  either login and register or logout button
 { 
     session_start(); 
 } 

@@ -52,7 +52,7 @@ if (isset($_POST['signupButton'])) {
   	header('location: index.php');
   }
 }
-
+//checks if the login button is pressed
 if (isset($_POST['loginButton'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
@@ -63,7 +63,7 @@ if (isset($_POST['loginButton'])) {
     if (empty($password)) {
         array_push($errors, "Password is required");
     }
-  
+  //checks if the provide credentials are correct
     if (count($errors) == 0) {
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $results = mysqli_query($db, $query);
