@@ -24,7 +24,7 @@ if ( isset( $_SESSION['username'] ) ) {
 </head>
 <body>
 <div class="pageContainer">
-	<div class="env">
+	<div class="card-body">
 		<header>
 			<h1>Cars List</h1>
 			<nav class="navBar">
@@ -66,7 +66,7 @@ if ( isset( $_SESSION['username'] ) ) {
 			</div>
 		</div>
 	</div>
-	<footer>
+	<footer class="card-footer text-muted">
 		<div>
 			<ul class="footerList">
 				<li class="footItem"><a class="footLink" href="contact.php">Contact us</a></li>

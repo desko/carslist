@@ -10,22 +10,21 @@
 <?php include('register.php')?>
 <?php include('errors.php')?>
 
-<div class="pageContainer">
-	<div class="env">
+<div class="pageContainer card">
+	<div class="card-body">
 		<header>
 			<h1>Cars List</h1>
-			<nav class="navBar">
+			<nav class="navbar navBar">
 				<ul class="navList">
 					<li class="navItem"><a class="navLink" href="index.php">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
-					
 					<li class="navItem"><a class="navLink" href="post.php">Post</a></li>
 					<?php include('logincheck.php')?>
 				</ul>
 			</nav>
 		</header>
-		<div class="main">
-			<div class="signupContainer">
+		<div class="main card-body">
+			<div class="signupContainer container-fluid">
 				<h2>Please fill out the form to sign up!</h2>
 				<form action="signup.php" method="POST">
 
@@ -41,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<footer>
+	<footer class="card-footer text-muted">
 		<div>
 			<ul class="footerList">
 				<li class="footItem"><a class="footLink" href="contact.php">Contact us</a></li>

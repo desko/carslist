@@ -17,7 +17,7 @@
         			        $item['model']               = $row['model'];
         			        $item['price']               = $row['price'];
         			        $returnData[] = $item;
-        			        echo "<div id=\"eachResultContainerID\" class=\"eachResultContainer\" onclick=\"displayModal(".$item['idlisting'].")\">";
+        			        echo "<div id=\"eachResultContainerID\" class=\"eachResultContainer container-fluid\" onclick=\"displayModal(".$item['idlisting'].")\">";
         			        echo $item["manufacturer"]." ".$item["model"]."<br>".$item["price"]."<br>";
         			        echo $imgdirstart.$item[$dir].'">';
         			        echo "</div>";

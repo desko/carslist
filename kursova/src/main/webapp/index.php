@@ -7,16 +7,15 @@
 	<title>Cars List</title>
 </head>
 <body>
-<div class="pageContainer">
-	<div class="env">
+<div class="pageContainer card">
+	<div class="card-body">
 		<header>
 			<h1>Cars List</h1>
-			<nav class="navBar">
+			<nav class="navbar navBar">
 				<ul class="navList">
 					<!-- Buttons section -->
 					<li class="navItem"><a class="navLink" href="index.php">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
-					
 					<li class="navItem"><a class="navLink" href="post.php">Post</a></li>
 					<?php include('logincheck.php')?>
 					<!--<li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
@@ -24,13 +23,13 @@
 				</ul>
 			</nav>
 		</header>
-		<div class="main">
-			<div class="newPostContainer">
+		<div class="main card-body">
+			<div class="newPostContainer container-fluid">
         		<?php include('indexresmodal.php')?>
         	</div>
 		</div>
 	</div>
-	<footer>
+	<footer class="card-footer text-muted">
 		<div>
 			<ul class="footerList">
 				<li class="footItem"><a class="footLink" href="contact.php">Contact us</a></li>
