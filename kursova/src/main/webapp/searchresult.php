@@ -40,17 +40,12 @@ $row = array();
 							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
 							if($maxprice=="")//no price requirment
 							{
-
-								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings";
-								
+                                $query = "SELECT * FROM listings";
 							}
 							else//price requirment
 							{
-								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
-								
+								$query = "SELECT * FROM listings WHERE price<='$maxprice'";
 							}
-
-        			    	
 						}
 						else
 						{
@@ -60,12 +55,12 @@ $row = array();
 							{
 								if($maxprice=="")//no price requirment
 								{
-									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make'";
+									$query = "SELECT * FROM listings WHERE manufacturer='$make'";
 									
 								}
 								else//with price requirment
 								{
-									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND price<='$maxprice'";
+									$query = "SELECT * FROM listings WHERE manufacturer='$make' AND price<='$maxprice'";
 									
 								}
 							}
@@ -74,14 +69,14 @@ $row = array();
 								if($maxprice=="")//no price requirment
 								{
 	
-									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' ";
+									$query = "SELECT * FROM listings WHERE manufacturer='$make' AND model='$model' ";
 									
 								}
 								else//with price requirment
 								{
-									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
+									$query = "SELECT * FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
 									
-									//$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+									//$query = "SELECT * FROM listings WHERE price<='$maxprice'";
 								}
 
 							}
@@ -91,22 +86,52 @@ $row = array();
 
         			    $dir="dirpicture1";
         			    $imgdirstart="<img class=\"searchImage\" src=\"/uploads/";
-						if (mysqli_num_rows($result) > 0) 
-						{
+        			    if (mysqli_num_rows($result) > 0)
+        			    {
         			        while($row = mysqli_fetch_assoc($result)) {
-        			            echo "<div class=\"eachResultContainer\">";
-        			            echo $row["manufacturer"]." ".$row["model"]."<br>".$row["price"]. "<br>";
-        			            echo $imgdirstart.$row[$dir]."\">";
+        			            $item = array();
+        			            $item['idlisting']           = $row['idlisting'];
+        			            $item['listingowner']        = $row['listingowner'];
+        			            $item['description']         = $row['description'];
+        			            $item['dirpicture1']         = $row['dirpicture1'];
+        			            $item['manufacturer']        = $row['manufacturer'];
+        			            $item['model']               = $row['model'];
+        			            $item['price']               = $row['price'];
+        			            $returnData[] = $item;
+        			            echo "<div id=\"eachResultContainerID\" class=\"eachResultContainer\" onclick=\"displayModal(".$item['idlisting'].")\">";
+        			            echo $item["manufacturer"]." ".$item["model"]."<br>".$item["price"]."<br>";
+        			            echo $imgdirstart.$item[$dir].'">';
         			            echo "</div>";
+        			            echo "<div id=".$item['idlisting']." class=\"modal\">
+                                    <div class=\"modal-content\">
+                                        <div class=\"modal-header\">
+                                            <span class=\"close\" onclick=\"closeModal(".$item['idlisting'].")\">&times;</span>
+                                            <h2>";
+        			            echo $item["manufacturer"]." ".$item["model"]." ".$item["price"]." lv";
+        			            echo
+        			            '</h2>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="modalImageContainer">'.
+                                            "<img class=\"modalImage\" src=\"/uploads/".$item[$dir].'">'.
+                                            '</div>'.
+                                            '<div class="modalText">'.
+                                            '<textarea class="modalTextArea" readonly>'.$item['description'].'</textarea>'.
+                                            '</div>'.
+                                            '</div>
+                                        <div class="modal-footer">
+                                            <h3>Modal Footer</h3>
+                                        </div>
+                                    </div>
+                                </div>';
         			        }
         			    }
-						else 
-						{
+        			    else
+        			    {
         			        echo "0 results";
-						}
-					}
-        			
-    			?>
+        			    }
+			}
+        		?>
 			</div>
 		</div>
 	</div>
@@ -121,5 +146,6 @@ $row = array();
 		</div>
 	</footer>
 </div>
+<script src="modal.js"></script>
 </body>
 </html>
