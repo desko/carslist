@@ -17,6 +17,7 @@ body {
 }
 .env {
 	max-height: 100%;
+	height:100%;
 }
 .navList {
 	list-style-type: none;
@@ -55,8 +56,8 @@ header {
 }
 .main	{
 	background-color: lightskyblue;
-	height: 100%;
 	max-height: 100%;
+	height: 100%;
 	flex-grow: 1;
 }
 header, .main, footer, .env {
@@ -139,15 +140,26 @@ header, .main, footer, .env {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content/Box */
 .modal-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
+
+/* Modal Content/Box */
 .modal-header {
   padding: 2px 16px;
   background-color: #5cb85c;
@@ -155,7 +167,13 @@ header, .main, footer, .env {
 }
 
 /* Modal Body */
-.modal-body {padding: 2px 16px;}
+.modal-body {
+	padding: 2px 16px;
+	display: flex;
+	flex-direction: row;
+	max-height:100%;
+	height:100%;
+	}
 
 /* Modal Footer */
 .modal-footer {
@@ -165,18 +183,22 @@ header, .main, footer, .env {
 }
 
 /* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s
+.modalImageContainer, .modalText {
+	max-width: 50%;
+	width: 100%;
+	max-height: 100%;
+	height: 100vh;
 }
-
+.modalImage{
+	max-width: 100%;
+	max-height:100%;
+	height: 80%;
+}
+.modalTextArea {
+	max-width: 100%;
+	width:100%;
+	height: 80%;
+}
 /* Add Animation */
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
