@@ -1,9 +1,13 @@
 <?php
 //session_start();
 $target_dir = "uploads/";
+$newfilename= time();
 $target_file = $target_dir . basename($_FILES["img"]["name"]);
+
+
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$target_file =$target_dir . $newfilename. ".".$imageFileType;
 $manufacturer;
 $model;
 $descriptionText;
@@ -53,7 +57,7 @@ if ($uploadOk == 0) {
         $model = mysqli_real_escape_string($db, $_POST['models']);
         $descriptionText = mysqli_real_escape_string($db, $_POST['descriptionText']);
         $price = mysqli_real_escape_string($db, $_POST['price']);
-        $imgName=basename( $_FILES["img"]["name"]);
+        $imgName=$newfilename. ".".$imageFileType;
 
             $query = "INSERT INTO listings(description,dirpicture1,listingowner,manufacturer,model,price) 
             VALUES('$descriptionText','$imgName','$username','$manufacturer','$model','$price')";
