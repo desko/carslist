@@ -11,5 +11,6 @@ if (isset($_SESSION['username']))
 else{?>
     <li class="navItem"><a class="navLink" href="login.php">Log in</a></li>
     <li class="navItem"><a class="navLink" href="signup.php">Sign up</a></li>
+    <li class="navItem"><a class="navLink" href="mylistings.php">My Listings</a></li>
     <?php }
     ?>
