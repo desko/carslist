@@ -39,7 +39,7 @@
                                             '</div>'.
                                         '</div>
                                         <div class="modal-footer">
-                                            <h3>Modal Footer</h3>
+                                            <h3>Cars List</h3>
                                         </div>
                                     </div>
                                 </div>';

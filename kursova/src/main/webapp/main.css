@@ -164,7 +164,9 @@ header, .main, footer, .env {
 /* Modal Content/Box */
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: lightskyblue;
   color: white;
 }
 
@@ -181,7 +183,7 @@ header, .main, footer, .env {
 /* Modal Footer */
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: lightskyblue;
   color: white;
 }
 
