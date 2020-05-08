@@ -24,6 +24,7 @@ if (isset($_POST['signupButton'])) {
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { array_push($errors, "Invalid email"); }
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email

@@ -4,6 +4,7 @@ $make;
 $model;
 $maxPrice;
 $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
+$row = array();
 ?>
 <!doctype html>
 <html>
@@ -30,20 +31,23 @@ $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
 		<div class="main">
 			<div class="resultContainer">
     			<?php
+
 					if (isset($_POST['searchButton'])) 
 					{
 						$make = mysqli_real_escape_string($db, $_POST['car']);
-						if($make==NULL)
+						if($make=="")//selected all manufacturers
 						{
 							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
-							if($maxprice=="")
+							if($maxprice=="")//no price requirment
 							{
 
 								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings";
+								
 							}
-							else
+							else//price requirment
 							{
 								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+								
 							}
 
         			    	
@@ -52,34 +56,38 @@ $db = mysqli_connect('localhost', 'root', 'root', 'carsdb');
 						{
 							$model = mysqli_real_escape_string($db, $_POST['model']);
 							$maxprice = mysqli_real_escape_string($db, $_POST['maxPrice']);
-							if($model==	"all")
+							if($model==	"all")//all models and specific maker selected
 							{
-								if($maxprice=="")
+								if($maxprice=="")//no price requirment
 								{
-	
 									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make'";
+									
 								}
-								else
+								else//with price requirment
 								{
 									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND price<='$maxprice'";
+									
 								}
 							}
-							else
+							else//specific model selected
 							{
-								if($maxprice=="")
+								if($maxprice=="")//no price requirment
 								{
 	
-									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings";
+									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' ";
+									
 								}
-								else
+								else//with price requirment
 								{
-									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
+									$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
+									
+									//$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE price<='$maxprice'";
 								}
-								$query = "SELECT manufacturer, model, price, dirpicture1 FROM listings WHERE manufacturer='$make' AND model='$model' AND price<='$maxprice'";
+
 							}
 						}
 						$result = mysqli_query($db, $query);
-        			    $row = array();
+        			
 
         			    $dir="dirpicture1";
         			    $imgdirstart="<img class=\"searchImage\" src=\"/uploads/";
