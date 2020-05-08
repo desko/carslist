@@ -5,6 +5,7 @@ if(!isset($_SESSION)) //checks if user is logged and displays  either login and 
 } 
 if (isset($_SESSION['username'])) 
 {    ?>
+        <li class="navItem"><a class="navLink" href="mylistings.php">My Listings</a></li>
         <li class="navItem"><a class="navLink" href="logout.php">Log out</a></li>
     <?php }
 else{?>
