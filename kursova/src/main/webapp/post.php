@@ -23,11 +23,11 @@ if ( isset( $_SESSION['username'] ) ) {
 	<title>Cars List</title>
 </head>
 <body>
-<div class="pageContainer">
+<div class="pageContainer card">
 	<div class="card-body">
 		<header>
 			<h1>Cars List</h1>
-			<nav class="navBar">
+			<nav class="navbar navBar">
 				<ul class="navList">
 					<li class="navItem"><a class="navLink" href="index.php">Home</a></li>
 					<li class="navItem"><a class="navLink" href="search.php">Search</a></li>
@@ -37,7 +37,7 @@ if ( isset( $_SESSION['username'] ) ) {
 				</ul>
 			</nav>
 		</header>
-		<div class="main">
+		<div class="main card-body">
 			<div class="postContainer">
 				<form enctype="multipart/form-data" action="upload.php" method="post">
 					<ul class="vertList">

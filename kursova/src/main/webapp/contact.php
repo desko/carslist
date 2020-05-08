@@ -23,8 +23,6 @@
 			</nav>
 		</header>
 		<div class="main card-body">
-			aa<br>
-		
 		</div>
 	</div>
 	<footer class="card-footer text-muted">
